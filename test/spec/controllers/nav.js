@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('NavigationController', function () {
 
   var location, scope;
 
@@ -9,7 +9,7 @@ describe('Controller: MainCtrl', function () {
   beforeEach(inject(function($controller, $rootScope, $location){
     location = $location;
     scope = $rootScope.$new();
-    $controller('NavController', {
+    $controller('NavCtrl', {
       $scope: scope
     });
   }));

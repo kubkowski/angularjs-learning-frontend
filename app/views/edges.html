@@ -1,1 +1,13 @@
 <h1>Edges</h1>
+
+<ul>
+	<li ng-repeat = "edge in edges">
+		<span class="label label-default">{{edge.category.name}}</span>
+		{{edge.name}}
+		<span class="text-muted">
+			({{displayRequirements(edge.requirements)}})
+
+
+		</span>
+	</li>
+</ul>
