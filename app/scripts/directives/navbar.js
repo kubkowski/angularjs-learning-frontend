@@ -5,6 +5,6 @@ angular.module('swFrontApp')
 		return {
 			restrict: 'E',
 			templateUrl: 'views/nav.html',
-			controller: 'NavController'
+			controller: 'NavCtrl'
 		}
 	});

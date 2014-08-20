@@ -19,6 +19,14 @@ describe('EdgesController', function() {
   		reqs = [{name: 'Agility', value: 'd6'}];
   		expect(scope.displayRequirements(reqs)).toEqual('Agility d6');
   	});
+  	it('ignores name if it is null', function() {
+  		reqs = [{name: null, value: 'Novice'}];
+  		expect(scope.displayRequirements(reqs)).toEqual('Novice');
+  	});
+  	it('s requirements should be delimited by comma', function() {
+  		reqs = [{name: null, value: 'Novice'}, {name: 'Agility', value: 'd6'}];
+  		expect(scope.displayRequirements(reqs)).toEqual('Novice, Agility d6');
+  	});
 
   });
 
