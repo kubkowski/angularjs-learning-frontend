@@ -8,9 +8,15 @@
  * Controller of the swFrontApp
  */
 angular.module('swFrontApp')
-  .controller('EdgesCtrl', function ($scope, edges) {
+  .controller('EdgesCtrl', function ($scope, edges, categories) {
   	
     $scope.edges = edges.query();
+    $scope.categories = categories.query();
+
+    $scope.filterBy = {
+      search: '',
+      category: $scope.categories[0]
+    };
 
     $scope.edges = [
   	{
@@ -25,14 +31,14 @@ angular.module('swFrontApp')
       ]
   	},
     {
-      name: 'Attractive',
+      name: 'Very attractive',
       description: 'Blah...',
       category: {
-        name: 'Background'
+        name: 'Active'
       },
       requirements: [
       { name: null, value: 'Novice'},
-      { name: 'Vigor', value: 'd6'}
+      { name: 'Charisma', value: 'd8'}
       ]
     }
   	];
