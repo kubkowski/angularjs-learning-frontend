@@ -1,30 +1,5 @@
 'use strict';
 
-angular.module('swFrontApp').service('edges', function () {
-	this.query = function() {
-		return [
-  	{
-  		name: 'Attractive',
-      description: 'Blah...',
-  		category: {
-  			name: 'Background'
-  		},
-      requirements: [
-      { name: null, value: 'Novice'},
-      { name: 'Vigor', value: 'd6'}
-      ]
-  	},
-    {
-      name: 'Attractive',
-      description: 'Blah...',
-      category: {
-        name: 'Background'
-      },
-      requirements: [
-      { name: null, value: 'Novice'},
-      { name: 'Vigor', value: 'd6'}
-      ]
-    }
-  	];
-	}
-})
+angular.module('swFrontApp').factory('edges', function ($resource) {
+	return $resource('/api/edges');
+});
