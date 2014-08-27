@@ -11,7 +11,12 @@ angular.module('swFrontApp')
   .controller('EdgesCtrl', function ($scope, edges, categories, ranks) {
   	
     $scope.edges = edges.query();
-    $scope.categories = categories.query();
+    
+    $scope.categories = [{ name: 'All' }];
+    $scope.serverCategories = categories.query(function(){
+      $scope.categories = $scope.categories.concat($scope.serverCategories);
+    });
+    
     $scope.ranks = ranks.query();
 
     $scope.filterBy = {
